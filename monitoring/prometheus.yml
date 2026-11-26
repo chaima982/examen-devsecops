@@ -1,0 +1,9 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: 'bibliotheque'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      # "app" = nom du service dans docker-compose.yml
+      - targets: ['app:8080']
